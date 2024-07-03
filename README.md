@@ -16,6 +16,7 @@ Welcome to the "Awesome Azure AI Apps" repository! This is a collection of apps 
 - [Azure OpenAI ChatGPT-like App](https://github.com/Azure-Samples/azure-search-openai-demo) - ChatGPT-like app with your data using Azure OpenAI and Azure AI Search (Python).
 - [GraphRAG Accelerator](https://github.com/Azure-Samples/graphrag-accelerator) - builds on top of the graphrag python package and exposes API endpoints hosted on Azure, which can be used to trigger indexing pipelines and enable querying of the graphrag knowledge graph.
 - [Virtual Assistant - GPT Smart Search Engine](https://github.com/MSUSAzureAccelerators/Azure-Cognitive-Search-Azure-OpenAI-Accelerator) - Azure AI Search + Azure OpenAI + Bot Framework + Langchain + Azure SQL + CosmosDB + Bing Search API + Document Intelligence SDK.
+- [Tiger Analytics - Azure OpenAI Hackathon](https://github.com/tiger-openai-hackathon/hacks) - contains information (data, instructions for the workshop, and reference material) related to Setting RAG solutioning using Azure AI services conducted by Microsoft and Tiger Analytics.
 
 ## References
 
