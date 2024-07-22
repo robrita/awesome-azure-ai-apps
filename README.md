@@ -15,6 +15,13 @@ Welcome to the "Awesome Azure AI Apps" repository! This is a collection of apps 
 - [Chat with your data](https://github.com/Azure-Samples/chat-with-your-data-solution-accelerator) - Uses an Azure OpenAI GPT model and an Azure AI Search index generated from your data, which is integrated into a web application to provide a natural language interface, including speech-to-text functionality, for search queries.
 - [RAG Experiment Accelerator](https://github.com/microsoft/rag-experiment-accelerator) - tool that helps you conduct experiments and evaluations using Azure AI Search and RAG pattern.
 - [GPT RAG Accelerator](https://github.com/Azure/gpt-rag) - a Retrieval-Augmented Generation pattern running in Azure, using Azure Cognitive Search for retrieval and Azure OpenAI large language models to power ChatGPT-style and Q&A experiences.
+- [sample app aoai chatGPT](https://github.com/microsoft/sample-app-aoai-chatGPT) - Sample code for a simple web chat experience through Azure OpenAI, including Azure OpenAI On Your Data.
+- [Chat Copilot](https://github.com/microsoft/chat-copilot) - help you understand how Semantic Kernel and AI can work in Web Applications.
+- [azurechat](https://github.com/microsoft/azurechat) - Azure Chat Solution Accelerator powered by Azure Open AI Service.
+- [Azure Openai at scale](https://github.com/Azure/openai-at-scale) - helps customers to build and deploy simple ChatGPT UI application on Azure.
+- [BotFramework WebChat](https://github.com/microsoft/BotFramework-WebChat) - A highly-customizable web-based client for Azure Bot Services.
+- [ai chat protocol](https://github.com/microsoft/ai-chat-protocol) - A library + API spec for easily streaming generative AI output to your chat applications.
+
 - [Vision AI Solution Accelerator](https://github.com/Azure/gen-cv) - a rich resource offering numerous examples of synthetic image generation, manipulation, and reasoning. Utilizing Azure Machine Learning, Computer Vision, OpenAI, and widely acclaimed open-source frameworks like Stable Diffusion.
 - [Business Process Automation Accelerator](https://github.com/Azure/business-process-automation) - This accelerator provides a no code Studio for users to quickly build complex, multi-stage AI pipelines across multiple Azure AI and ML Services. Users can select, and stack, AI/ML Services from across Azure Cognitive Services (OpenAI, Speech, Language, Form Recognizer, ReadAPI), Azure Machine Learning into a single, fully integrated pipeline.
 - [Enterprise Search with OpenAI](https://github.com/MSUSAzureAccelerators/Knowledge-Mining-with-OpenAI) - accelerate the deployment of a Python-based Knowledge Mining solution with OpenAI and use that engine to answer queries / questions specific to that Knowledge Base.
@@ -34,3 +41,4 @@ Welcome to the "Awesome Azure AI Apps" repository! This is a collection of apps 
 - [AI Solution Accelerators](https://github.com/Azure/ai-solution-accelerators-list) - Summary Table of AI Solution Accelerators
 - [MSUS Azure Accelerators](https://github.com/orgs/MSUSAzureAccelerators/repositories) - Azure accelerators repo
 - [OpenAI Workshop](https://github.com/microsoft/OpenAIWorkshop) - workshop materials to build intelligent solutions on Open AI
+- [BotBuilder Samples](https://github.com/microsoft/BotBuilder-Samples) - Here you will find task-focused samples in C#, JavaScript/TypeScript, and Python to help you get started with the Bot Framework SDK!
