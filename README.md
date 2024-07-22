@@ -11,6 +11,7 @@ Welcome to the "Awesome Azure AI Apps" repository! This is a collection of apps 
 ## Apps
 
 - [Grant Writer](https://github.com/microsoft/Build-your-own-AI-Assistant-Solution-Accelerator) - It leverages Azure Open AI Service, Azure AI Search and Microsoft Fabric, to identify relevant documents, summarize and categorize vast amounts of unstructured information, and accelerate the overall document review and content generation process.
+- [GPT Azure Search Engine](https://github.com/pablomarin/GPT-Azure-Search-Engine) - Azure AI Search + Azure OpenAI + Bot Framework + Langchain + Azure SQL + CosmosDB + Bing Search API + Document Intelligence SDK.
 - [Chat with your data](https://github.com/Azure-Samples/chat-with-your-data-solution-accelerator) - Uses an Azure OpenAI GPT model and an Azure AI Search index generated from your data, which is integrated into a web application to provide a natural language interface, including speech-to-text functionality, for search queries.
 - [RAG Experiment Accelerator](https://github.com/microsoft/rag-experiment-accelerator) - tool that helps you conduct experiments and evaluations using Azure AI Search and RAG pattern.
 - [GPT RAG Accelerator](https://github.com/Azure/gpt-rag) - a Retrieval-Augmented Generation pattern running in Azure, using Azure Cognitive Search for retrieval and Azure OpenAI large language models to power ChatGPT-style and Q&A experiences.
