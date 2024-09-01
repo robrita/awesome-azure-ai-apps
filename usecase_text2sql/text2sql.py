@@ -1,19 +1,22 @@
-import os
+import re
+import json
 import streamlit as st
-import app.utils
+import app.utils as utils
+import usecase_text2sql.prompts as prompts
+import usecase_text2sql.sqlite as sqlite
 
 
-def text2sql(config, client, col1, col2):
+def text2sql(col1, col2):
     with col1:
         st.header("🔀Text to SQL and RAG")
 
         TYPES = {"text2sql_1db": text2sql1db}
         type = st.selectbox("Scenario:", options=list(TYPES.keys()))
 
-        TYPES[type](config, client, col1, col2)
+        TYPES[type](col1, col2)
 
 
-def text2sql1db(config, client, col1, col2):
+def text2sql1db(col1, col2):
     with col1:
         with st.container(border=True):
             st.markdown(
@@ -33,50 +36,39 @@ def text2sql1db(config, client, col1, col2):
 
         if submit:
             with st.spinner("Processing ..."):
-                try:
-                    # reset tracer
-                    col2.empty()
+                # select the relevant tables
+                messages = prompts.select_tables(question)
+                tables = utils.chat(
+                    col2, question, messages, 0, 800, True, "json_object"
+                )
 
-                    # Response generation
-                    full_response = ""
-                    message_placeholder = st.empty()
-                    app.utils.trace(st, col2, "User input", question)
+                print("tables", tables)
+                table_names = json.loads(tables)["table_names"]
 
-                    messages = [
-                        {
-                            "role": "system",
-                            "content": f"""
-                                You are an expert in converting English questions to SQL query!
-                                The SQL database has the name STUDENT and has the following columns - NAME, CLASS, 
-                                SECTION \n\nFor example,\nExample 1 - How many entries of records are present?, 
-                                the SQL command will be something like this SELECT COUNT(*) FROM STUDENT ;
-                                \nExample 2 - Tell me all the students studying in Data Science class?, 
-                                the SQL command will be something like this SELECT * FROM STUDENT 
-                                where CLASS="Data Science"; 
-                                also the sql code should not have ``` in beginning or end and sql word in output
-                            """,
-                        },
-                        {"role": "user", "content": question},
-                    ]
-                    app.utils.trace(st, col2, "Message prompt", messages)
+                if table_names:
+                    print("table_names", table_names)
+                    # get the table infos
+                    table_infos = sqlite.table_infos(table_names)
+                    print("table_infos", table_infos)
 
-                    for completion in client.chat.completions.create(
-                        model=config["model"],
-                        messages=messages,
-                        temperature=0,
-                        max_tokens=1280,
-                        stream=True,
-                    ):
+                    # build the messages
+                    messages = prompts.instruction(question, table_infos)
 
-                        if (
-                            completion.choices
-                            and completion.choices[0].delta.content is not None
-                        ):
-                            full_response += completion.choices[0].delta.content
-                            message_placeholder.markdown(full_response + "▌")
+                    # get the SQL Query
+                    sql_query = utils.chat(col2, question, messages, 0, 800, True)
+                    clean_query = re.sub(r"```\w*", "", sql_query).strip()
 
-                    message_placeholder.markdown(full_response)
-                    app.utils.trace(st, col2, "Full response", full_response)
+                    if sql_query != "null" and clean_query.startswith("SELECT"):
+                        print("clean_query", clean_query)
 
-                except Exception as e:
-                    st.error(f"An error occurred: {e}")
+                        # run the query
+                        result = sqlite.query_data(clean_query)
+                        st.write(result)
+
+                        # rephrase the output
+                        messages = prompts.final_answer(question, clean_query, result)
+                        utils.chat(col2, question, messages, 0, 800, True)
+                    else:
+                        st.error(f"Invalid SQL Query: {clean_query}")
+                else:
+                    st.error("Invalid input: table not found")

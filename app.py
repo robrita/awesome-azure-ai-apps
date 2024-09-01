@@ -1,32 +1,15 @@
-import os
-import json
 import uuid
 import base64
 import streamlit as st
 import app.pages
 import extra_streamlit_components as stx
+import app.utils as utils
 
-from openai import AzureOpenAI
 from dotenv import load_dotenv
 from usecase_text2sql.text2sql import text2sql
 from datetime import datetime, timedelta
 
 load_dotenv()
-
-# create a config dictionary
-config = {
-    "endpoint": os.environ["AZURE_OPENAI_ENDPOINT"],
-    "api_key": os.environ["AZURE_OPENAI_KEY"],
-    "api_version": os.environ["AZURE_OPENAI_API_VERSION"],
-    "model": os.environ["AZURE_OPENAI_CHAT_DEPLOYMENT"],
-}
-
-# Initialize OpenAI client
-client = AzureOpenAI(
-    azure_endpoint=config["endpoint"],
-    api_version=config["api_version"],
-    api_key=config["api_key"],
-)
 
 # App home page
 app.pages.show_home()
@@ -41,7 +24,8 @@ if "xuser" not in st.session_state:
     st.session_state["xuser"] = "start"
 
 
-def home(config, client, col1, col2):
+def home(col1, col2):
+    col1.empty()
     col2.empty()
     st.header("✨Azure AI Apps")
     st.markdown(
@@ -59,13 +43,15 @@ def login():
         type="password",
     )
 
-    if st.button("Submit"):
-        if appKey == os.environ["APP_KEY"]:
+    if st.button("Submit") and appKey:
+        if utils.check_access(appKey):
             st.session_state["xuser"] = "login"
             st.info("You have successfully logged in.")
             st.rerun()
         else:
             st.error("Invalid access key. Please try again.")
+    else:
+        st.warning("Please enter your access key.")
 
 
 # login button
@@ -90,7 +76,7 @@ if st.session_state["xuser"] == "login" and not cookie_manager.get("xuser"):
     )
 
 xuser = cookie_manager.get("xuser")
-print("Check user:", xuser)
+# print("Check user:", xuser)
 
 if xuser:
     try:
@@ -104,7 +90,7 @@ if xuser:
         PAGES = {"text2sql": text2sql, "Home Page": home}
         page = st.sidebar.selectbox("AI Apps:", options=list(PAGES.keys()))
 
-        PAGES[page](config, client, col1, col2)
+        PAGES[page](col1, col2)
 
         # app sidebar
         with st.sidebar:

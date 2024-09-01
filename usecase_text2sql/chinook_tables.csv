@@ -1,0 +1,12 @@
+Table Name	Description
+albums	Stores information about music albums, including album title and the associated artist ID.
+artists	Contains details of artists, primarily their ID and name.
+customers	Includes customer information, such as names, contact details, address, and support rep ID.
+employees	Stores employee data, including personal information, contact details, job title, and reports to another employee.
+genres	Defines music genres, with each genre having a unique ID and a name.
+invoices	Contains invoice records, including customer ID, invoice date, billing information, and total amount.
+invoice_items	Represents items in an invoice, detailing invoice line ID, associated invoice and track IDs, unit price, and quantity.
+media_types	Describes different media types, identified by a unique ID and name.
+playlists	Contains information about playlists, including playlist ID and name.
+playlist_track	Associates tracks with playlists, linking playlist IDs to track IDs.
+tracks	Stores track details, such as track name, album ID, media type ID, genre ID, composer, duration, file size, and unit price.
