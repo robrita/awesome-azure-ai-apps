@@ -3,7 +3,8 @@
 
 # accept user input
 import sys
-import json
+import csv
+import requests
 
 if len(sys.argv) > 1:
     url = sys.argv[1]
@@ -38,20 +39,64 @@ https://github.com/MSUSAzureAccelerators/Azure-Cognitive-Search-Azure-OpenAI-Acc
 https://github.com/tiger-openai-hackathon/hacks
 """
 
-dict = {}
 
-# loop through repos
-for repo in repos.splitlines():
-    if repo != "":
-        # split by / and get the elements
-        elements = repo.split("/")
-        # print(f"{elements[3]},{elements[4]}")
+# parse github repos
+def parse_github_repos():
+    dict = {}
+    # loop through repos
+    for repo in repos.splitlines():
+        if repo != "":
+            # split by / and get the elements
+            elements = repo.split("/")
+            # print(f"{elements[3]},{elements[4]}")
 
-        if elements[3] not in dict:
-            dict[elements[3]] = []
+            if elements[3] not in dict:
+                dict[elements[3]] = []
 
-        # check if element[4] is in the list, else append it
-        if elements[4] not in dict[elements[3]]:
-            dict[elements[3]].append(elements[4])
+            # check if element[4] is in the list, else append it
+            if elements[4] not in dict[elements[3]]:
+                dict[elements[3]].append(elements[4])
 
-print(json.dumps(dict))
+    print("dict", dict)
+    json_to_csv(dict)
+
+
+# get the commit date
+def get_commit_date(owner, repo):
+    url = f"https://api.github.com/repos/{owner}/{repo}/commits"
+    response = requests.get(url)
+
+    if response.status_code == 200:
+        commits = response.json()
+        if commits:
+            last_commit_date = commits[0]["commit"]["committer"]["date"]
+            print("Last commit date:", last_commit_date)
+            return last_commit_date
+    else:
+        print("Failed to fetch commits:", response.status_code, response.text)
+        return None
+
+
+# convert json to csv format
+def json_to_csv(dict):
+    # Specify the output CSV file
+    output_file = "aiapps.csv"
+
+    # Open the output CSV file in write mode
+    with open(output_file, mode="w", newline="") as file:
+        writer = csv.writer(file)
+
+        # Write headers for "Owner" and "Repository"
+        writer.writerow(["Owner", "Repository", "Updated At", "Link"])
+
+        # Write each owner and corresponding repository to the CSV file
+        for owner, repositories in dict.items():
+            for repo in repositories:
+                updatedAt = get_commit_date(owner, repo)
+                link = f"https://github.com/{owner}/{repo}"
+                writer.writerow([owner, repo, updatedAt, link])
+
+    print(f"Data has been written to {output_file}")
+
+
+parse_github_repos()
