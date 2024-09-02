@@ -1,5 +1,5 @@
 Owner,Repository,Updated At,Link,Use Cases,Tech Stack
-microsoft,Build-your-own-copilot-Solution-Accelerator,2024-08-30T14:19:47Z,https://github.com/microsoft/Build-your-own-copilot-Solution-Accelerator,Client Advsior / Research Assistant,Azure Open AI / AI Search / Microsoft Fabric
+microsoft,[Build-your-own-copilot-Solution-Accelerator](https://github.com/microsoft/Build-your-own-copilot-Solution-Accelerator),2024-08-30T14:19:47Z,https://github.com/microsoft/Build-your-own-copilot-Solution-Accelerator,Client Advsior / Research Assistant,Azure Open AI / AI Search / Microsoft Fabric
 microsoft,rag-experiment-accelerator,2024-08-30T15:52:57Z,https://github.com/microsoft/rag-experiment-accelerator,RAG Experiment and Evaluations,Azure Open AI / AI Search / Prompt Flow
 microsoft,sample-app-aoai-chatGPT,2024-08-30T20:37:27Z,https://github.com/microsoft/sample-app-aoai-chatGPT,Web chat on your data,Azure Open AI / AI Search / CosmosDB Mongo vCore vector index / Elasticsearch index / Pinecone index
 microsoft,chat-copilot,2024-08-20T18:05:55Z,https://github.com/microsoft/chat-copilot,Web chat on your data,Azure Open AI / AI Search / CosmosDB Mongo vCore vector index / Elasticsearch index / Pinecone index
