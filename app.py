@@ -1,5 +1,6 @@
 import uuid
 import base64
+import pandas as pd
 import streamlit as st
 import app.pages
 import extra_streamlit_components as stx
@@ -30,9 +31,16 @@ def home(col1, col2):
     st.header("✨Azure AI Apps")
     st.markdown(
         """
-        AI Apps Directory
+        Search and sort "Azure AI Accelerators" by use case or technology stack.\n
+        Search on [CSV file](https://github.com/robrita/awesome-azure-ai-apps/blob/main/scripts/aiapps.csv)
         """
     )
+
+    # Set the path to the CSV file
+    csv_file_path = "./scripts/aiapps.csv"
+    df = pd.read_csv(csv_file_path)
+
+    st.dataframe(df, use_container_width=True)
 
 
 @st.dialog("Login with access key")
@@ -55,7 +63,7 @@ def login():
 
 
 # login button
-if st.sidebar.button("Click to login"):
+if st.sidebar.button("Click to reload"):
     st.rerun()
 
 # Print cookies
