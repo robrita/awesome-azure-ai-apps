@@ -7,6 +7,7 @@
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
 Welcome to the "Awesome Azure AI Apps" repository! This is a collection of apps powered by Azure AI platform.
+[Azure AI Apps Directory](https://azureai.streamlit.app/)
 
 ## Apps
 

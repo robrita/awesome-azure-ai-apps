@@ -1,9 +1,6 @@
 import os
 import streamlit as st
 from openai import AzureOpenAI
-from dotenv import load_dotenv
-
-load_dotenv()
 
 # create a config dictionary
 config = {

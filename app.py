@@ -1,3 +1,4 @@
+import os
 import uuid
 import base64
 import pandas as pd
@@ -6,11 +7,8 @@ import app.pages
 import extra_streamlit_components as stx
 import app.utils as utils
 
-from dotenv import load_dotenv
 from usecase_text2sql.text2sql import text2sql
 from datetime import datetime, timedelta
-
-load_dotenv()
 
 # App home page
 app.pages.show_home()
@@ -72,8 +70,11 @@ if st.sidebar.button("Click to reload"):
 
 # Show modal if not logged in
 if st.session_state["xuser"] == "start" and "xuser" not in st.context.cookies:
-    st.warning("You must log in to access this application.")
-    login()
+    if os.environ["ENABLE_AUTH"] == "1":
+        st.warning("You must log in to access this application.")
+        login()
+    else:
+        st.session_state["xuser"] = "login"
 
 # Set cookie
 if st.session_state["xuser"] == "login" and not cookie_manager.get("xuser"):
@@ -95,8 +96,8 @@ if xuser:
             st.rerun()
 
         # create pages
-        PAGES = {"text2sql": text2sql, "Home Page": home}
-        page = st.sidebar.selectbox("AI Apps:", options=list(PAGES.keys()))
+        PAGES = {"AI Apps": home, "text2sql": text2sql}
+        page = st.sidebar.selectbox("Menu:", options=list(PAGES.keys()))
 
         PAGES[page](col1, col2)
 
