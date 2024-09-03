@@ -92,10 +92,7 @@ def select_tables(input):
                 - Stores track details, such as track name, album ID, media type ID, genre ID, composer, duration, file size, and unit price.\n\n
 
                 Remember to include ALL POTENTIALLY RELEVANT table names, even if you're not sure that they're needed.\n
-                Format the output as JSON array of table_names.\n
-
-                Input query: {input}\n
-                Table names: """
+                Format the output as JSON array of table_names."""
         }
     ]
     few_shots = [
