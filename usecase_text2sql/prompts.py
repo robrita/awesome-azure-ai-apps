@@ -98,8 +98,13 @@ def select_tables(input):
                 Table names: """
         }
     ]
+    few_shots = [
+        {"user": "list down all media types"},
+        {"assistant": '{ "table_names": ["media_types"] }'},
+    ]
+    user = [{"user": input}]
 
-    return format_messages(prompts)
+    return format_messages(prompts + few_shots + user)
 
 
 # final answer prompt
