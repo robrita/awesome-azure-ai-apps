@@ -4,15 +4,17 @@ Azure,openai-at-scale,2023-06-09T00:33:19Z,https://github.com/Azure/openai-at-sc
 Azure,gen-cv,2024-08-31T08:21:23Z,https://github.com/Azure/gen-cv,Vision AI ,Azure Open AI / AI Search / Dall-E 3 / Stable Diffusion / Image Embeddings / AI Avatar
 Azure,business-process-automation,2024-08-07T20:59:58Z,https://github.com/Azure/business-process-automation,Business process automation / Enterprise ChatGPT,Azure Open AI / AI Search / Speech AI Studio / Language AI Studio / Form Recognizer / ReadAPI / Video Analyzer
 Azure,Vector-Search-AI-Assistant,2024-06-27T12:25:53Z,https://github.com/Azure/Vector-Search-AI-Assistant,Build Modern AI Apps,Azure Open AI / AI Search / CosmosDB Mongo  vector index / AKS
-Azure-Samples,chat-with-your-data-solution-accelerator,2024-08-28T11:41:10Z,https://github.com/Azure-Samples/chat-with-your-data-solution-accelerator,Chat with your data,Azure Open AI / CosmosDB Mongo  vector index / Semantic Kernel / LangChain / Prompt Flow
-Azure-Samples,azure-search-openai-demo,2024-08-30T21:02:45Z,https://github.com/Azure-Samples/azure-search-openai-demo,Chat with your data,Azure Open AI / AI Search / Document Intelligence
+Azure-Samples,chat-with-your-data-solution-accelerator,2024-08-28T11:41:10Z,https://github.com/Azure-Samples/chat-with-your-data-solution-accelerator,RAG Chat App,Azure Open AI / CosmosDB Mongo  vector index / Semantic Kernel / LangChain / Prompt Flow
+Azure-Samples,azure-search-openai-demo,2024-08-30T21:02:45Z,https://github.com/Azure-Samples/azure-search-openai-demo,RAG Chat App,Azure Open AI / AI Search / Document Intelligence
+Azure-Samples,rag-postgres-openai-python,2024-08-31T00:13:09Z,https://github.com/Azure-Samples/rag-postgres-openai-python,RAG Chat App,Azure Open AI / AI Search / PostgreSQL / FastAPI
+Azure-Samples,ai-rag-chat-evaluator,2024-08-30T13:38:10Z,https://github.com/Azure-Samples/ai-rag-chat-evaluator,RAG Chat App,Azure Open AI / AI Search / Azure AI Evaluate SDK
 Azure-Samples,graphrag-accelerator,2024-08-15T18:19:56Z,https://github.com/Azure-Samples/graphrag-accelerator,Knowledge Graph RAG,Azure Open AI / AI Search / CosmosDB / AKS
 microsoft,Build-your-own-copilot-Solution-Accelerator,2024-08-30T14:19:47Z,https://github.com/microsoft/Build-your-own-copilot-Solution-Accelerator,Client Advsior / Research Assistant,Azure Open AI / AI Search / Microsoft Fabric
 microsoft,rag-experiment-accelerator,2024-08-30T15:52:57Z,https://github.com/microsoft/rag-experiment-accelerator,RAG Experiment and Evaluations,Azure Open AI / AI Search / Prompt Flow
-microsoft,sample-app-aoai-chatGPT,2024-08-30T20:37:27Z,https://github.com/microsoft/sample-app-aoai-chatGPT,Web chat on your data,Azure Open AI / AI Search / CosmosDB Mongo vector index / Elasticsearch index / Pinecone index
-microsoft,chat-copilot,2024-08-20T18:05:55Z,https://github.com/microsoft/chat-copilot,Web chat copilot,Azure Open AI / Semantic kernel
+microsoft,sample-app-aoai-chatGPT,2024-08-30T20:37:27Z,https://github.com/microsoft/sample-app-aoai-chatGPT,RAG Chat App,Azure Open AI / AI Search / CosmosDB Mongo vector index / Elasticsearch index / Pinecone index
+microsoft,chat-copilot,2024-08-20T18:05:55Z,https://github.com/microsoft/chat-copilot,RAG Chat App,Azure Open AI / Semantic kernel
 microsoft,azurechat,2024-02-29T02:47:25Z,https://github.com/microsoft/azurechat,Web chat on data / Persona / Extension,Azure Open AI / Authentication
-microsoft,OpenAIWorkshop,2024-08-23T21:32:16Z,https://github.com/microsoft/OpenAIWorkshop,Workshop demos / OpenAI Batch,Azure Open AI / AI Search / Powerapp
+microsoft,OpenAIWorkshop,2024-08-23T21:32:16Z,https://github.com/microsoft/OpenAIWorkshop,RAG Chat App / OpenAI Batch,Azure Open AI / AI Search / Powerapp
 MSUSAzureAccelerators,Knowledge-Mining-with-OpenAI,2023-11-15T08:20:41Z,https://github.com/MSUSAzureAccelerators/Knowledge-Mining-with-OpenAI,Knowledge Mining / Enterprise Search,Azure Open AI / AI Search / Redis / CosmosDB
 MSUSAzureAccelerators,Azure-Cognitive-Search-Azure-OpenAI-Accelerator,2024-07-10T16:12:26Z,https://github.com/MSUSAzureAccelerators/Azure-Cognitive-Search-Azure-OpenAI-Accelerator,GPT Smart Search / Tabular Data QA / SQL QA,Azure Open AI / AI Search / Streamlit / Azure SQL / Bing API / Azure Document Intelligence / LangChain / CosmosDB
-tiger-openai-hackathon,hacks,2024-06-27T06:32:20Z,https://github.com/tiger-openai-hackathon/hacks,RAG Chatbot,Azure Open AI / AI Search
+tiger-openai-hackathon,hacks,2024-06-27T06:32:20Z,https://github.com/tiger-openai-hackathon/hacks,RAG Chat App,Azure Open AI / AI Search

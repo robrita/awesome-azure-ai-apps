@@ -39,7 +39,6 @@ def check_access(appKey):
 # chat completion
 def chat(
     col2: object,
-    question="",
     messages=[],
     temperature=0.7,
     max_tokens=800,
@@ -49,7 +48,6 @@ def chat(
     try:
         # reset tracer
         col2.empty()
-        trace(col2, "User input", question)
         trace(col2, "Message prompt", messages)
 
         # Response generation

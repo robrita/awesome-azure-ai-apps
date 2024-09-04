@@ -36,11 +36,11 @@ def text2sql1db(col1, col2):
 
         if submit:
             with st.spinner("Processing ..."):
+                utils.trace(col2, "User input", question)
+
                 # select the relevant tables
                 messages = prompts.select_tables(question)
-                tables = utils.chat(
-                    col2, question, messages, 0, 800, True, "json_object"
-                )
+                tables = utils.chat(col2, messages, 0, 800, True, "json_object")
 
                 print("tables", tables)
                 table_names = json.loads(tables)["table_names"]
@@ -55,7 +55,7 @@ def text2sql1db(col1, col2):
                     messages = prompts.instruction(question, table_infos)
 
                     # get the SQL Query
-                    sql_query = utils.chat(col2, question, messages, 0, 800, True)
+                    sql_query = utils.chat(col2, messages, 0, 800, True)
                     clean_query = re.sub(r"```\w*", "", sql_query).strip()
 
                     if sql_query != "null" and clean_query.startswith("SELECT"):
@@ -67,7 +67,7 @@ def text2sql1db(col1, col2):
 
                         # rephrase the output
                         messages = prompts.final_answer(question, clean_query, result)
-                        utils.chat(col2, question, messages, 0, 800, True)
+                        utils.chat(col2, messages, 0, 800, True)
                     else:
                         st.error(f"Invalid SQL Query: {clean_query}")
                 else:
