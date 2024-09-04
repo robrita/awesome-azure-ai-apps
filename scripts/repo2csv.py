@@ -14,29 +14,35 @@ if len(sys.argv) > 1:
     elements = url.split("/")
     print(f"{elements[3]},{elements[4]}")
 
+# https://github.com/microsoft/Build-your-own-copilot-Solution-Accelerator
+# https://github.com/pablomarin/GPT-Azure-Search-Engine
+# https://github.com/Azure-Samples/chat-with-your-data-solution-accelerator
+# https://github.com/microsoft/rag-experiment-accelerator
+# https://github.com/Azure/gpt-rag
+# https://github.com/microsoft/sample-app-aoai-chatGPT
+# https://github.com/microsoft/chat-copilot
+# https://github.com/microsoft/azurechat
+# https://github.com/Azure/openai-at-scale
+# https://github.com/microsoft/BotFramework-WebChat
+# https://github.com/microsoft/ai-chat-protocol
+# https://github.com/Azure/gen-cv
+# https://github.com/Azure/business-process-automation
+# https://github.com/MSUSAzureAccelerators/Knowledge-Mining-with-OpenAI
+# https://github.com/microsoft/OpenAIWorkshop/tree/main/scenarios/natural_language_query
+# https://github.com/microsoft/OpenAIWorkshop/tree/main/scenarios/openai_batch_pipeline
+# https://github.com/microsoft/OpenAIWorkshop/tree/main/scenarios/openai_on_custom_dataset
+# https://github.com/Azure/Vector-Search-AI-Assistant
+# https://github.com/Azure-Samples/azure-search-openai-demo
+# https://github.com/Azure-Samples/graphrag-accelerator
+# https://github.com/MSUSAzureAccelerators/Azure-Cognitive-Search-Azure-OpenAI-Accelerator
+# https://github.com/tiger-openai-hackathon/hacks
+
 repos = """
-https://github.com/microsoft/Build-your-own-copilot-Solution-Accelerator
-https://github.com/pablomarin/GPT-Azure-Search-Engine
-https://github.com/Azure-Samples/chat-with-your-data-solution-accelerator
-https://github.com/microsoft/rag-experiment-accelerator
-https://github.com/Azure/gpt-rag
-https://github.com/microsoft/sample-app-aoai-chatGPT
-https://github.com/microsoft/chat-copilot
-https://github.com/microsoft/azurechat
-https://github.com/Azure/openai-at-scale
-https://github.com/microsoft/BotFramework-WebChat
-https://github.com/microsoft/ai-chat-protocol
-https://github.com/Azure/gen-cv
-https://github.com/Azure/business-process-automation
-https://github.com/MSUSAzureAccelerators/Knowledge-Mining-with-OpenAI
-https://github.com/microsoft/OpenAIWorkshop/tree/main/scenarios/natural_language_query
-https://github.com/microsoft/OpenAIWorkshop/tree/main/scenarios/openai_batch_pipeline
-https://github.com/microsoft/OpenAIWorkshop/tree/main/scenarios/openai_on_custom_dataset
-https://github.com/Azure/Vector-Search-AI-Assistant
-https://github.com/Azure-Samples/azure-search-openai-demo
-https://github.com/Azure-Samples/graphrag-accelerator
-https://github.com/MSUSAzureAccelerators/Azure-Cognitive-Search-Azure-OpenAI-Accelerator
-https://github.com/tiger-openai-hackathon/hacks
+https://github.com/Azure-Samples/NL2SQL
+https://github.com/Azure-Samples/llm-evaluation
+https://github.com/Azure-Samples/openai-chat-app-entra-auth-builtin
+https://github.com/Azure-Samples/openai-chat-vision-quickstart
+https://github.com/Azure-Samples/gen-ai-bot-in-a-box
 """
 
 
@@ -80,7 +86,7 @@ def get_commit_date(owner, repo):
 # convert json to csv format
 def json_to_csv(dict):
     # Specify the output CSV file
-    output_file = "aiapps.csv"
+    output_file = "aiapps2.csv"
 
     # Open the output CSV file in write mode
     with open(output_file, mode="w", newline="") as file:

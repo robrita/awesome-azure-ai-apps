@@ -8,6 +8,11 @@ Azure-Samples,chat-with-your-data-solution-accelerator,2024-08-28T11:41:10Z,http
 Azure-Samples,azure-search-openai-demo,2024-08-30T21:02:45Z,https://github.com/Azure-Samples/azure-search-openai-demo,RAG Chat App,Azure Open AI / AI Search / Document Intelligence
 Azure-Samples,rag-postgres-openai-python,2024-08-31T00:13:09Z,https://github.com/Azure-Samples/rag-postgres-openai-python,RAG Chat App,Azure Open AI / AI Search / PostgreSQL / FastAPI
 Azure-Samples,ai-rag-chat-evaluator,2024-08-30T13:38:10Z,https://github.com/Azure-Samples/ai-rag-chat-evaluator,RAG Chat App,Azure Open AI / AI Search / Azure AI Evaluate SDK
+Azure-Samples,NL2SQL,2024-09-02T19:09:14Z,https://github.com/Azure-Samples/NL2SQL,,
+Azure-Samples,llm-evaluation,2024-05-27T17:08:54Z,https://github.com/Azure-Samples/llm-evaluation,LLM Evaluation,Azure Open AI / AI Search / AI Studio Evaluation
+Azure-Samples,openai-chat-app-entra-auth-builtin,2024-08-21T15:56:30Z,https://github.com/Azure-Samples/openai-chat-app-entra-auth-builtin,Chat app with Auth,Azure Open AI / MS Entra ID
+Azure-Samples,openai-chat-vision-quickstart,2024-09-03T13:33:35Z,https://github.com/Azure-Samples/openai-chat-vision-quickstart,Chat with images,Azure Open AI / AI Search / Vision
+Azure-Samples,gen-ai-bot-in-a-box,2024-09-04T02:40:41Z,https://github.com/Azure-Samples/gen-ai-bot-in-a-box,AI-in-a-Box chat app,Azure Open AI / AI Search / Botservice
 Azure-Samples,graphrag-accelerator,2024-08-15T18:19:56Z,https://github.com/Azure-Samples/graphrag-accelerator,Knowledge Graph RAG,Azure Open AI / AI Search / CosmosDB / AKS
 microsoft,Build-your-own-copilot-Solution-Accelerator,2024-08-30T14:19:47Z,https://github.com/microsoft/Build-your-own-copilot-Solution-Accelerator,Client Advsior / Research Assistant,Azure Open AI / AI Search / Microsoft Fabric
 microsoft,rag-experiment-accelerator,2024-08-30T15:52:57Z,https://github.com/microsoft/rag-experiment-accelerator,RAG Experiment and Evaluations,Azure Open AI / AI Search / Prompt Flow
